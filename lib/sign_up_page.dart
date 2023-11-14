@@ -15,6 +15,7 @@ class SignUpPageState extends State<SignUpPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      key: _scaffoldMessengerKey, // 이 부분을 추가
       appBar: AppBar(
         title: Text("Sign Up"),
       ),
