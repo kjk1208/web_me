@@ -16,6 +16,12 @@ class _LoginPageState extends State<LoginPage> {
   final _passwordController = TextEditingController();
 
   Future<void> _login() async {
+    if (!_validateInput()) {
+      // 입력 유효성 검사 실패 시 처리
+      return;
+    }
+
+
     try {
       await FirebaseAuth.instance.signInWithEmailAndPassword(
           email: _emailController.text, password: _passwordController.text);
